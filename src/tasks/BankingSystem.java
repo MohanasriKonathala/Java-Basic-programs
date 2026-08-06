@@ -48,7 +48,7 @@ class CurrentAccount extends Account {
     }
 }
 
-public class BankAccountManagement {
+public class BankingSystem {
 
     public static void main(String[] args) {
 
