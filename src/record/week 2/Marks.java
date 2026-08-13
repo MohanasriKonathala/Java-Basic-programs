@@ -2,17 +2,18 @@ class Marks
 {
     public static void main(String args[])
     {
-      //arguments given in main()method are strings using parse method those are converted into integers
-        int m1 = Integer.parseInt(args[0]);
-        int m2 = Integer.parseInt(args[1]);
-        int m3 = Integer.parseInt(args[2]);
-        int m4 = Integer.parseInt(args[3]);
-        int m5 = Integer.parseInt(args[4]);
+        String input[] = {"80", "70", "90", "85", "75"};
+
+        int m1 = Integer.parseInt(input[0]);
+        int m2 = Integer.parseInt(input[1]);
+        int m3 = Integer.parseInt(input[2]);
+        int m4 = Integer.parseInt(input[3]);
+        int m5 = Integer.parseInt(input[4]);
 
         int total = m1 + m2 + m3 + m4 + m5;
         double average = total / 5.0;
 
-        System.out.println("Total Marks = " + total);
-        System.out.println("Average Marks = " + average);
+        System.out.println("Total = " + total);
+        System.out.println("Average = " + average);
     }
 }
