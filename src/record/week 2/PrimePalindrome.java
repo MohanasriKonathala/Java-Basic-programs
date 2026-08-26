@@ -1,35 +1,78 @@
 import java.util.Scanner;
-class PrimePalindrome {
-    public static void main(String[] args) {
+
+// Class to check whether a number is Prime Palindrome
+class PrimePalindrome
+{
+    // Main method
+    public static void main(String[] args)
+    {
+        // Creating Scanner object to take input from the user
         Scanner sc = new Scanner(System.in);
+
+        // Asking the user to enter a number
         System.out.print("Enter a number: ");
+
+        // Reading the number
         int n = sc.nextInt();
-        // Check Prime
+
+        // ---------------- CHECK PRIME ----------------
+
+        // Initially assume the number is prime
         boolean prime = true;
-        if (n <= 1) {
+
+        // Numbers less than or equal to 1 are not prime
+        if (n <= 1)
+        {
             prime = false;
-        } 
-        else {
-            for (int i = 2; i <= n / 2; i++) {
-                if (n % i == 0) {
+        }
+        else
+        {
+            // Checking whether n is divisible by any number
+            // from 2 to n/2
+            for (int i = 2; i <= n / 2; i++)
+            {
+                // If remainder is 0, n is divisible by i
+                if (n % i == 0)
+                {
+                    // Number is not prime
                     prime = false;
+
+                    // Stop the loop
                     break;
                 }
             }
         }
-        // Check Palindrome
+
+        // ---------------- CHECK PALINDROME ----------------
+
+        // Store the original number because n will be changed
         int original = n;
+
+        // Variable to store the reversed number
         int reverse = 0;
 
-        while (n > 0) {
+        // Reverse the number
+        while (n > 0)
+        {
+            // Get the last digit
             int digit = n % 10;
+
+            // Add the digit to the reverse number
             reverse = reverse * 10 + digit;
+
+            // Remove the last digit from n
             n = n / 10;
         }
-        if (prime && original == reverse) {
+
+        // Check both conditions:
+        // 1. Number should be prime
+        // 2. Original number should be equal to reversed number
+        if (prime && original == reverse)
+        {
             System.out.println(original + " is a Prime Palindrome number.");
         }
-        else {
+        else
+        {
             System.out.println(original + " is NOT a Prime Palindrome number.");
         }
     }
